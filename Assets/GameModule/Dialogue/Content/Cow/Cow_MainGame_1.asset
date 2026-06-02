@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059866d52d4040189d0ba9b268c533f5, type: 3}
+  m_Name: Cow_MainGame_1
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 6fe3518e6987a2843a18d55a1f3cd579, type: 2}
+    dialogues:
+    - "\uC74C\uBA38...."
+    - "\uBC30\uACE0\uD30C\uBC30\uACE0\uD30C\uBC30\uACE0\uD30C\uBC30\uACE0\uD30C"
+    - "\uAC77\uAE30\uB3C4 \uADC0\uCC2E\uB2E4~"
+    - "\uC544~ \uB204\uAC00 \uB098\uD55C\uD14C \uBC00 \uC880 \uAC16\uB2E4\uC8FC\uBA74
+      \uC88B\uACA0\uB2E4~"
