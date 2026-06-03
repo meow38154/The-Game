@@ -1,7 +1,5 @@
-﻿using System;
-using Agents.NPC;
+﻿using Agents.NPC;
 using UI.Dialogues;
-using UI.Interaction.Interface;
 using UnityEngine;
 using Utility;
 

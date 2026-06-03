@@ -2,6 +2,7 @@
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using Utility;
 
 namespace FSM.SO
 {
@@ -14,37 +15,13 @@ namespace FSM.SO
         [ContextMenu("Enum export")]
         public void EnumExport()
         {
-#if UNITY_EDITOR
-            const string folderPath = "Assets/Scripts/Enum";
-
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
-
-            string filePath = Path.Combine(folderPath, $"{stateListEnumName}.cs");
-
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine("// Auto Generated");
-            sb.AppendLine();
-            sb.AppendLine($"public enum {stateListEnumName}");
-            sb.AppendLine("{");
-
+            string[] sv = new string[States.Length];
             for (int i = 0; i < States.Length; i++)
             {
-                if (States[i] == null)
-                    continue;
-
-                sb.AppendLine($"    {States[i].StateName} = {i},");
+                sv[i] = States[i].StateName;
             }
-
-            sb.AppendLine("}");
-
-            File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
-
-            AssetDatabase.Refresh();
-
-            Debug.Log($"Enum Export Success : {filePath}");
-#endif
+            
+            Utility.EnumSpawner.EnumSpawn(stateListEnumName, sv);
         }
     }
 }

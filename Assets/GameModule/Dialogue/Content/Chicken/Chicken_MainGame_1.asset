@@ -9,14 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059866d52d4040189d0ba9b268c533f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
   m_Name: Chicken_MainGame_1
   m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
   <DialogueBundleData>k__BackingField:
   - profile: {fileID: 11400000, guid: 0773b74c88dce4544905077738180e1e, type: 2}
     dialogues:
-    - "\uC548\uB155 \uCE5C\uAD6C!"
-    - "\uAE00\uC384, \uB0B4\uAC00 \uC0C8\uB4E4\uC744 \uD53C\uD574\uC11C \uC54C\uC744
-      \uC228\uACA8\uB1A8\uB2E8 \uB9D0\uC57C?"
-    - "\uADFC\uB370 \uB0B4 \uAE30\uC5B5\uB825\uC774 \uC548 \uC88B\uC544\uC11C \uB9D0\uC774\uC9C0..."
-    - "\uD639\uC2DC \uB0B4 \uC54C\uB4E4\uC744 \uCC3E\uC544\uC904 \uC218 \uC788\uC744\uAE4C?"
+    - "\uC27F!"
+    - "\uC870\uC6A9\uD788 \uC640\uC694!"
+    - "\uC544\uC8FC \uC911\uC694\uD55C \uBE44\uBC00 \uC774\uC57C\uAE30\uC5D0\uC694!"
+    - "\uC0AC\uC2E4 \uC81C\uAC00 \uC54C\uC744 \uC228\uACA8\uB1A8\uAC70\uB4E0\uC694?"
+    - "\uB204\uAC00 \uAC00\uC838\uAC08\uAE4C \uBD10 \uC5C4\uCCAD \uC548\uC804\uD55C
+      \uACF3\uC5D0 \uC228\uACA8\uB1A8\uC5B4\uC694!"
+    - "\uADFC\uB370..."
+    - "\uB108\uBB34 \uC548\uC804\uD558\uAC8C \uC228\uACA8\uB194\uC11C..."
+    - "\uC81C\uAC00 \uC5B4\uB514 \uC228\uACBC\uB294\uC9C0 3\uCD08\uB9CC\uC5D0 \uAE4C\uBA39\uC5B4\uBC84\uB838\uC5B4\uC694."
+    - "\uC5D0\uD5E4\uD5E4..."
+    - "\uC544\uB2C8, \uC548 \uC6C3\uACA8\uC694."
+    - "\uC9C4\uC9DC \uD070\uC77C\uC774\uC5D0\uC694."
+    - "\uD639\uC2DC \uB3CC\uC544\uB2E4\uB2C8\uB2E4\uAC00 \uC54C\uC744 \uBC1C\uACAC\uD558\uBA74
+      \uC800\uD55C\uD14C \uB2E4\uC2DC \uC8FC\uC2E4 \uC218 \uC788\uB098\uC694?"
+    - "\uC81C \uC54C\uC740 \uB531 \uBCF4\uBA74 \uC81C \uC54C\uC774\uC5D0\uC694!"
+    - "...\uC544\uB9C8\uB3C4\uC694!"

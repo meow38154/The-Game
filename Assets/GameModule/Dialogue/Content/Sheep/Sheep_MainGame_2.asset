@@ -9,10 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059866d52d4040189d0ba9b268c533f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
   m_Name: Sheep_MainGame_2
   m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
   <DialogueBundleData>k__BackingField:
   - profile: {fileID: 11400000, guid: c3e85f15919205a40841580db9e29e8c, type: 2}
     dialogues:
-    - "\uC9C0\uC6B0\uB77C\uACE0."
+    - "\uBA54\uC5D0..."
+    - "\uC544\uC9C1\uB3C4 \uC81C \uD138\uC774 \uB178\uB780\uC0C9\uC774\uC8E0?"
+    - "\uC0B4\uC9DD \uC775\uC219\uD574\uC9C0\uACE0 \uC788\uAE34 \uD55C\uB370..."
+    - "\uADF8\uB798\uB3C4 \uC81C\uAC00 \uC544\uB2CC \uAC83 \uAC19\uC544\uC694."
+    - "\uC624\uB298\uB3C4 \uB2E4\uB978 \uC591\uB4E4\uC774"
+    - "\u2018\uBC00\uC54C \uAC19\uC544!\u2019 \uD558\uBA74\uC11C \uC6C3\uC5C8\uC5B4\uC694."
+    - "\uBA54\uC5D0..."
+    - "\uC5FC\uC0C9\uC57D\uC744 \uC9C0\uC6B8 \uC218 \uC788\uB294 \uAC78 \uCC3E\uC73C\uBA74"
+    - "\uAF2D \uC54C\uB824\uC918\uC694."

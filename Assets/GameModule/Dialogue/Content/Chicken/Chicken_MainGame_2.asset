@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059866d52d4040189d0ba9b268c533f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
   m_Name: Chicken_MainGame_2
   m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
   <DialogueBundleData>k__BackingField:
   - profile: {fileID: 11400000, guid: 0773b74c88dce4544905077738180e1e, type: 2}
     dialogues:
-    - "\uD760..."
-    - "\uADFC\uCC98 \uC218\uD480\uC774\uC5C8\uB358 \uAC83 \uAC19\uAE30\uB3C4 \uD558\uACE0...?"
+    - "\uC81C \uC54C \uCC3E\uC558\uB098\uC694?"
+    - "\uC544\uC9C1\uC774\uAD6C\uB098..."
+    - "\uC74C..."
+    - "\uBD84\uBA85 \uC5C4\uCCAD \uC88B\uC740 \uC7A5\uC18C\uC600\uB294\uB370..."
+    - "\uC74C... \uB098\uBB34 \uC544\uB798\uC600\uB098?"
+    - "\uC218\uD480 \uC548 \uCABD\uC774\uC600\uB098?"
+    - "\uBC1C\uACAC\uD558\uBA74 \uAF2D \uC800\uD55C\uD14C \uB2E4\uC2DC \uC8FC\uC138\uC694!"
+    - "\uC54C\uC774 \uC678\uB85C\uC6CC \uD560 \uAC83 \uAC19\uC544\uC694!"

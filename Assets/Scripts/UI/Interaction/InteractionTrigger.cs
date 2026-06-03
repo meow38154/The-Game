@@ -33,6 +33,7 @@ namespace UI.Interaction
         private TextMeshProUGUI _loreText;
         
         private bool _enable;
+        private bool _isInteracting;
 
         public event Action OnInteractionTrigger; 
         
@@ -86,7 +87,7 @@ namespace UI.Interaction
                 return;
             }
 
-            if (remainingIterations <= 0)
+            if (remainingIterations <= 1)
                 return;
 
             ChangeDeadField(false);
@@ -102,19 +103,26 @@ namespace UI.Interaction
         
         private void KeyBoardInteractionTrigger()
         {
-            if (_interactionLoad == null || !_enable || dead) return;
-            
-            if (Keyboard.current.eKey.isPressed)
+            if (_interactionLoad == null || !_enable || dead || Time.timeScale == 0) return;
+
+            if (!Keyboard.current.eKey.isPressed)
             {
-                _interactionLoad.fillAmount += Time.deltaTime / interactionDuration;
-                if (!(_interactionLoad.fillAmount >= 1)) return;
-                OnInteractionTrigger?.Invoke();
-                InteractionActive(false);
-            }
-            else
-            {
+                _isInteracting = false;
                 _interactionLoad.DOFillAmount(0, 0.2f).SetEase(Ease.OutBack);
+                return;
             }
+
+            if (_isInteracting) return;
+
+            _interactionLoad.fillAmount += Time.deltaTime / interactionDuration;
+
+            if (_interactionLoad.fillAmount < 1f) return;
+
+            _isInteracting = true;
+            _interactionLoad.fillAmount = 0f;
+
+            OnInteractionTrigger?.Invoke();
+            InteractionActive(false);
         }
     }
 }

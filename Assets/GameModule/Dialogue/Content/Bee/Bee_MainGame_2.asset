@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059866d52d4040189d0ba9b268c533f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
   m_Name: Bee_MainGame_2
   m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
   <DialogueBundleData>k__BackingField:
   - profile: {fileID: 11400000, guid: c10888a0652007e4c88e5c5f3f8cd719, type: 2}
     dialogues:
-    - "\uC5B4? \uBC8C\uC9D1 \uCC3E\uC558\uB098\uC694?"
-    - "\uC544 \uC544\uB2C8\uAD70\uC694..."
+    - "\uC81C \uBC8C\uC9D1 \uBD24\uB098\uC694?"
+    - "\uC544\uC9C1 \uBABB \uCC3E\uC558\uAD70\uC694..."
+    - "\uAD1C\uCC2E\uC544\uC694!"
+    - "\uBC8C\uC9D1\uC740 \uB0A0\uC544\uAC00\uC9C0 \uC54A\uC73C\uB2C8\uAE4C\uC694!"

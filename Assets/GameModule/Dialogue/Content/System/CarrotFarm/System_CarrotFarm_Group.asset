@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56eecc93757444fa3a75ffa257e86e9, type: 3}
+  m_Name: System_CarrotFarm_Group
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <Dialogues>k__BackingField:
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd3e3c5aba3e91947811f4a9b2e20476, type: 2}
+  - {fileID: 11400000, guid: cd2b50e9c256f2d4aa02619d2172ae92, type: 2}

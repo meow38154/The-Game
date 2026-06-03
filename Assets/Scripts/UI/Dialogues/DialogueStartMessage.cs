@@ -6,13 +6,13 @@ namespace UI.Dialogues
 {
     public readonly struct DialogueStartMessage
     {
-        public readonly DialogueBundleData[] Dialogues;
-        public readonly IInteractionTrigger InteractionObject;
+        public readonly DialogueBundleData[] dialogues;
+        public readonly IInteractionTrigger interactionObject;
 
         public DialogueStartMessage(DialogueBundleData[] dialogues, IInteractionTrigger interactionObject)
         {
-            InteractionObject = interactionObject;
-            Dialogues = dialogues;
+            this.interactionObject = interactionObject;
+            this.dialogues = dialogues;
         }
     }
 }

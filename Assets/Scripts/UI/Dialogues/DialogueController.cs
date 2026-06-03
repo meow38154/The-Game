@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Agents.Players;
 using DG.Tweening;
 using GGMLib.ModuleSystem;
 using TMPro;
-using UI.Interaction;
 using UI.Interaction.Interface;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -68,8 +66,8 @@ namespace UI.Dialogues
             if (_dialogueRoutine != null)
                 StopCoroutine(_dialogueRoutine);
 
-            _dialogueRoutine = StartCoroutine(DialogueRender(message.Dialogues));
-            _actionInteractionObject = message.InteractionObject;
+            _dialogueRoutine = StartCoroutine(DialogueRender(message.dialogues));
+            _actionInteractionObject = message.interactionObject;
         }
 
         
@@ -94,6 +92,7 @@ namespace UI.Dialogues
 
                 foreach (string content in dialogue.dialogues)
                 {
+                    
                     contentText.text = "";
 
                     _textTween?.Kill();
@@ -103,7 +102,7 @@ namespace UI.Dialogues
                         .SetEase(Ease.Linear);
 
                     yield return _textTween.WaitForCompletion();
-
+                    
                     yield return WaitEnterUp();
                     yield return WaitEnterDown();
                 }
@@ -118,7 +117,9 @@ namespace UI.Dialogues
         }
 
         private static bool IsEnterPressed()
-        {
+        {    if (Time.timeScale == 0f)
+                return false;
+
             return Keyboard.current != null &&
                    (Keyboard.current.enterKey.wasPressedThisFrame ||
                     Keyboard.current.numpadEnterKey.wasPressedThisFrame);
@@ -126,7 +127,11 @@ namespace UI.Dialogues
 
         private static IEnumerator WaitEnterDown()
         {
-            yield return new WaitUntil(IsEnterPressed);
+            yield return new WaitUntil(() =>
+                Time.timeScale > 0f &&
+                Keyboard.current != null &&
+                (Keyboard.current.enterKey.wasPressedThisFrame ||
+                 Keyboard.current.numpadEnterKey.wasPressedThisFrame));
         }
 
         private static IEnumerator WaitEnterUp()

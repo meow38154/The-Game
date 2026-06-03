@@ -9,14 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059866d52d4040189d0ba9b268c533f5, type: 3}
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
   m_Name: Cow_MainGame_1
   m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
   <DialogueBundleData>k__BackingField:
   - profile: {fileID: 11400000, guid: 6fe3518e6987a2843a18d55a1f3cd579, type: 2}
     dialogues:
-    - "\uC74C\uBA38...."
-    - "\uBC30\uACE0\uD30C\uBC30\uACE0\uD30C\uBC30\uACE0\uD30C\uBC30\uACE0\uD30C"
-    - "\uAC77\uAE30\uB3C4 \uADC0\uCC2E\uB2E4~"
-    - "\uC544~ \uB204\uAC00 \uB098\uD55C\uD14C \uBC00 \uC880 \uAC16\uB2E4\uC8FC\uBA74
-      \uC88B\uACA0\uB2E4~"
+    - "\uC74C\uBA38..."
+    - "\uC548\uB155."
+    - "\uBC30\uACE0\uD30C..."
+    - "\uC5C4\uCCAD \uBC30\uACE0\uD30C..."
+    - "\uC624\uB298 \uBC00\uC744 \uAC00\uC838\uB2E4\uC8FC\uAE30\uB85C \uD55C \uCE5C\uAD6C\uAC00
+      \uC788\uC5C8\uB294\uB370..."
+    - "\uC544\uC9C1\uB3C4 \uC548 \uC654\uC5B4."
+    - "\uACC4\uC18D \uAE30\uB2E4\uB9AC\uACE0 \uC788\uB294\uB370..."
+    - "\uBC30\uC5D0\uC11C \uC790\uAFB8 \uAF2C\uB974\uB975 \uC18C\uB9AC\uAC00 \uB098."
+    - "\uD639\uC2DC \uB108\uAC00 \uB300\uC2E0 \uBAA9\uC7A5\uC5D0\uC11C \uBC00\uC744
+      \uC880 \uAC00\uC838\uC640\uC904 \uC218 \uC788\uC744\uAE4C...?"
+    - "\uB098\uB3C4 \uAC00\uACE0 \uC2F6\uC740\uB370..."
+    - "\uBC30\uACE0\uD30C\uC11C \uC6C0\uC9C1\uC774\uAE30 \uC2EB\uC5B4..."

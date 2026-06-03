@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bee_MainGame_Group
   m_EditorClassIdentifier: Assembly-CSharp::Agents.NPC.DialogueGroupDataSo
   <Dialogues>k__BackingField:
-  - {fileID: 11400000, guid: 167fea6f68d77c54daa051bf0b0b8e0a, type: 2}
   - {fileID: 11400000, guid: 29534e205f284fc40b54f4a2da284188, type: 2}
+  - {fileID: 11400000, guid: 167fea6f68d77c54daa051bf0b0b8e0a, type: 2}

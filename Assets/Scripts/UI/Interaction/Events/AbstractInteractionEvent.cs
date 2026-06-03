@@ -6,7 +6,12 @@ namespace UI.Interaction.Events
 {
     public abstract class AbstractInteractionEvent : MonoBehaviour, IInteractionEvent
     { 
+        [Header("Start Setting")]
         [SerializeField] private int requiredInteractionCount;
+        [Header("Quest Setting")]
+        [SerializeField] private QuestListEnum questListEnum;
+        [SerializeField] private bool completion;
+
         public IInteractionTrigger InteractionTrigger { get; set; }
         
         public void Start()
