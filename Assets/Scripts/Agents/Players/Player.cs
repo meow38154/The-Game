@@ -13,6 +13,7 @@ namespace Agents.Players
         [SerializeField] private StateListSo playerStates;
 
         private IControlMovement _movement;
+        public IControlMovement Movement => _movement;
         private StateMachine _stateMachine;
         
         protected override void InitializeModules()

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Sheep_QuestClear_1
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 99db0b6dee681894c8fc212c354a7eec, type: 2}
+    dialogues:
+    - "\uBA54\uC5D0!"
+    - "\uB3CC\uC544\uC654\uC5B4\uC694!"
+    - "\uC81C \uD138\uC774 \uB2E4\uC2DC \uD558\uC580\uC0C9\uC774 \uB410\uC5B4\uC694!"
+    - "\uC815\uB9D0 \uACE0\uB9C8\uC6CC\uC694."
+    - "\uC0AC\uC2E4 \uC694\uC998\uB3C4 \uAC00\uB054 \uAC70\uC6B8\uC744 \uD655\uC778\uD574\uC694."
+    - "\uD639\uC2DC \uB2E4\uC2DC \uB178\uB780\uC0C9\uC774 \uB418\uC9C0 \uC54A\uC558\uB098
+      \uD574\uC11C\uC694."
+    - "\uC870\uAE08 \uC2E0\uACBD \uC4F0\uC774\uB124\uC694..."
+    - "\uBA54\uC5D0..."

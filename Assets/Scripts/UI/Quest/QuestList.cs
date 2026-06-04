@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using GGMLib.ObjectPool.Runtime;
 using TMPro;
+using UI.Announcement;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
@@ -9,8 +11,9 @@ namespace UI.Quest
     public class QuestList : MonoBehaviour
     {
         [SerializeField] private Transform questsContainerTrm;
+        [SerializeField] private Sprite defaultQuestSprite;
         [SerializeField] private Sprite clearQuestSprite;
-
+        
         private readonly Dictionary<QuestListEnum, (string questTitle, bool isClear)> _questDic = new();
         
         private void OnEnable()
@@ -18,6 +21,7 @@ namespace UI.Quest
             EventBus.Subscribe<QuestAddMessage>(QuestAdd);
             EventBus.Subscribe<QuestRemoveMessage>(QuestRemove);
             EventBus.Subscribe<QuestClearMessage>(QuestClear);
+            EventBus.Subscribe<QuestAllRemoveMessage>(QuestAllRemove);
 
             QuestViewUpdate();
         }
@@ -27,26 +31,36 @@ namespace UI.Quest
             EventBus.Unsubscribe<QuestAddMessage>(QuestAdd);
             EventBus.Unsubscribe<QuestRemoveMessage>(QuestRemove);
             EventBus.Unsubscribe<QuestClearMessage>(QuestClear);
+            EventBus.Unsubscribe<QuestAllRemoveMessage>(QuestAllRemove);
         }
 
         private void QuestAdd(QuestAddMessage message)
         {
+            EventBus.Publish(new AnnouncementMessage("새 할 일 추가됨!"));
             _questDic.TryAdd(message.title, (message.questTitle, false));
             QuestViewUpdate();
         }
 
         private void QuestRemove(QuestRemoveMessage message)
         {
+            EventBus.Publish(new QuestCountRemoveMessage(1));
             _questDic.Remove(message.title);
             QuestViewUpdate();
         }
 
         private void QuestClear(QuestClearMessage message)
         {
+            EventBus.Publish(new AnnouncementMessage("할 일 완료됨!"));
             if (!_questDic.TryGetValue(message.title, out var quest))
                 return;
 
             _questDic[message.title] = (quest.questTitle, true);
+            QuestViewUpdate();
+        }
+
+        private void QuestAllRemove(QuestAllRemoveMessage questAllRemoveMessage)
+        {
+            _questDic.Clear();
             QuestViewUpdate();
         }
 
@@ -74,6 +88,8 @@ namespace UI.Quest
                 Image image = child.GetComponentInChildren<Image>();
                 if (image != null && quest.Value.isClear)
                     image.sprite = clearQuestSprite;
+                else
+                    image.sprite = defaultQuestSprite;
 
                 questIndex++;
             }

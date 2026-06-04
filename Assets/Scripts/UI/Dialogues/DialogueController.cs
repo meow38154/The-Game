@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Agents.Players;
 using DG.Tweening;
 using GGMLib.ModuleSystem;
 using TMPro;
 using UI.Interaction.Interface;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Utility;
@@ -25,10 +27,10 @@ namespace UI.Dialogues
         private Coroutine _dialogueRoutine;
         private Tween _textTween;
         private IControlMovement _controlMovement;
-        
+
         private GameObject _player;
         private IInteractionTrigger _actionInteractionObject;
-        
+
         private void Awake()
         {
             EventBus.Subscribe<PlayerGameObjectMessage>(HandleGetPlayer);
@@ -36,18 +38,24 @@ namespace UI.Dialogues
 
         private void Start()
         {
-            _controlMovement = _player.GetComponent<ModuleOwner>().GetModule<IControlMovement>();
+            if (_player == null) return;
+
+            _controlMovement = _player
+                .GetComponent<ModuleOwner>()
+                .GetModule<IControlMovement>();
         }
 
         private void HandleGetPlayer(PlayerGameObjectMessage message)
         {
-            _player = message.gameObject;            
+            _player = message.gameObject;
         }
 
         private void OnEnable()
         {
             EventBus.Subscribe<DialogueStartMessage>(DialogueRenderPlay);
-            dialoguePanel.gameObject.SetActive(false);
+
+            if (dialoguePanel != null)
+                dialoguePanel.gameObject.SetActive(false);
         }
 
         private void OnDisable()
@@ -66,18 +74,18 @@ namespace UI.Dialogues
             if (_dialogueRoutine != null)
                 StopCoroutine(_dialogueRoutine);
 
-            _dialogueRoutine = StartCoroutine(DialogueRender(message.dialogues));
             _actionInteractionObject = message.interactionObject;
+            _dialogueRoutine = StartCoroutine(DialogueRender(message.dialogues, message.unityEvent));
         }
 
-        
-        private IEnumerator DialogueRender(DialogueBundleData[] dialogues)
+        private IEnumerator DialogueRender(DialogueBundleData[] dialogues, UnityEvent unityEvent)
         {
-            _controlMovement.CanManualMovement = false;
-            
+            if (_controlMovement != null)
+                _controlMovement.CanManualMovement = false;
+
             dialoguePanel.gameObject.SetActive(true);
 
-            foreach (var dialogue in dialogues)
+            foreach (DialogueBundleData dialogue in dialogues)
             {
                 if (dialogue.profile != null)
                 {
@@ -92,32 +100,66 @@ namespace UI.Dialogues
 
                 foreach (string content in dialogue.dialogues)
                 {
-                    
-                    contentText.text = "";
-
-                    _textTween?.Kill();
-
-                    float duration = content.Length * textPrintSpeed;
-                    _textTween = contentText.DOText(content, duration)
-                        .SetEase(Ease.Linear);
-
-                    yield return _textTween.WaitForCompletion();
-                    
                     yield return WaitEnterUp();
+
+                    bool skipped = false;
+                    yield return PrintText(content, value => skipped = value);
+
+                    if (skipped)
+                        yield return WaitEnterUp();
+
                     yield return WaitEnterDown();
                 }
             }
-            _controlMovement.CanManualMovement = true;
-            
+
+            if (_controlMovement != null)
+                _controlMovement.CanManualMovement = true;
+
             dialoguePanel.gameObject.SetActive(false);
-            
-            _actionInteractionObject.InteractionActive(true);
+
+            if (_actionInteractionObject != null)
+                _actionInteractionObject.InteractionActive(true);
+
+            unityEvent?.Invoke();
             
             _dialogueRoutine = null;
         }
 
+        private IEnumerator PrintText(string content, Action<bool> onComplete)
+        {
+            bool skipped = false;
+
+            content = content.Replace("{C}", Environment.UserName);
+            content = content.Replace("{D}", Environment.UserDomainName);
+
+            contentText.text = "";
+
+            _textTween?.Kill();
+
+            float duration = content.Length * textPrintSpeed;
+
+            _textTween = contentText
+                .DOText(content, duration)
+                .SetEase(Ease.Linear);
+
+            while (_textTween != null && _textTween.IsActive() && _textTween.IsPlaying())
+            {
+                if (IsEnterPressed())
+                {
+                    skipped = true;
+                    _textTween.Complete();
+                    break;
+                }
+
+                yield return null;
+            }
+
+            onComplete?.Invoke(skipped);
+        }
+
         private static bool IsEnterPressed()
-        {    if (Time.timeScale == 0f)
+        {
+            if (Time.timeScale == 0f)
                 return false;
 
             return Keyboard.current != null &&

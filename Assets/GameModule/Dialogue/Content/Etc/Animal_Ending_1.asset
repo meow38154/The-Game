@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Animal_Ending_1
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 0773b74c88dce4544905077738180e1e, type: 2}
+    dialogues:
+    - "\uAF2C\uAF2C!"
+    - "\uADF8\uB54C \uC81C \uC54C \uCC3E\uC544\uC918\uC11C \uC815\uB9D0 \uACE0\uB9C8\uC6E0\uC5B4\uC694!"
+    - "\uB355\uBD84\uC5D0 \uC9C0\uAE08\uB3C4 \uC544\uC8FC \uC548\uC804\uD558\uAC8C
+      \uC9C0\uD0A4\uACE0 \uC788\uC5B4\uC694."
+    - ...
+    - "\uC774\uBC88\uC5D0\uB294 \uC5B4\uB514 \uB480\uB294\uC9C0\uB3C4 \uAE30\uC5B5\uD558\uACE0
+      \uC788\uACE0\uC694!"
+    - "\uC544\uB9C8\uB3C4\uC694!"
+  - profile: {fileID: 11400000, guid: 6fe3518e6987a2843a18d55a1f3cd579, type: 2}
+    dialogues:
+    - "\uC74C\uBA38..."
+    - "\uB124\uAC00 \uB3C4\uC640\uC900 \uB4A4\uB85C \uBC30\uBD80\uB978 \uB0A0\uC774
+      \uB9CE\uC544\uC84C\uC5B4."
+    - "\uBC30\uAC00 \uBD80\uB974\uBA74 \uB9C8\uC74C\uB3C4 \uB290\uAE0B\uD574\uC838."
+    - "\uC624\uB298 \uC774 \uC21C\uAC04\uB3C4..."
+    - "\uCC38 \uB530\uB73B\uD558\uACE0 \uD3C9\uD654\uB86D\uB124."
+  - profile: {fileID: 11400000, guid: c10888a0652007e4c88e5c5f3f8cd719, type: 2}
+    dialogues:
+    - "\uC548\uB155\uD558\uC138\uC694!"
+    - "\uB2F9\uC2E0 \uB355\uBD84\uC5D0 \uBC8C\uC9D1 \uCC3E\uC558\uC2B5\uB2C8\uB2E4!"
+    - "\uC774\uC81C \uCDA5\uC9C0 \uC54A\uACE0, \uAE38\uB3C4 \uC870\uAE08 \uB35C \uC783\uC2B5\uB2C8\uB2E4."
+    - "\uC870\uAE08\uB9CC\uC694."
+    - "\uC815\uB9D0 \uACE0\uB9C8\uC6B4 \uC0AC\uB78C\uC785\uB2C8\uB2E4!"
+  - profile: {fileID: 11400000, guid: 99db0b6dee681894c8fc212c354a7eec, type: 2}
+    dialogues:
+    - "\uBA54\uC5D0..."
+    - "\uC800\uB3C4 \uAC10\uC0AC\uD558\uB2E4\uACE0 \uB9D0\uD558\uACE0 \uC2F6\uC5C8\uC5B4\uC694."
+    - "\uB178\uB780 \uD138 \uB54C\uBB38\uC5D0 \uC18D\uC0C1\uD588\uB294\uB370..."
+    - "\uB355\uBD84\uC5D0 \uB2E4\uC2DC \uC81C \uBAA8\uC2B5\uC73C\uB85C \uB3CC\uC544\uC654\uC5B4\uC694."
+    - "\uC774\uC81C \uC870\uAE08 \uB354 \uB2F9\uB2F9\uD574\uC9C8 \uC218 \uC788\uC744
+      \uAC83 \uAC19\uC544\uC694."
+  - profile: {fileID: 11400000, guid: 80601025e9725664faf1153876918480, type: 2}
+    dialogues:
+    - "\uD788\uD79D!"
+    - "\uB2F9\uADFC\uB3C4 \uACE0\uB9C8\uC6E0\uACE0, \uB108\uB3C4 \uACE0\uB9C8\uC6CC!"
+    - "\uC624\uB298\uC740 \uAE30\uBD84\uC774 \uCD5C\uACE0\uC57C!"
+    - "\uB2E4\uC74C\uC5D0 \uB610 \uB9CC\uB098\uBA74 \uC81C\uC77C \uB9DB\uC788\uB294
+      \uB2F9\uADFC \uC774\uC57C\uAE30\uBD80\uD130 \uD574\uC904\uAC8C!"
+    - "\uAF2D \uB2E4\uC2DC \uC640\uC57C \uD574!"

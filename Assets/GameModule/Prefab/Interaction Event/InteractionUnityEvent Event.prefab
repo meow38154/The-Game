@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4294402515893197503}
   - component: {fileID: 5841326862022372519}
   m_Layer: 5
-  m_Name: InteractionUnityEvent Event
+  m_Name: InteractionUnityEvent Event (c = 0)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0866cda854f48b3a05a688ffd2690d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.Interaction.Events.InteractionEvent
+  requiredInteractionCount: 1
+  channelNumber: 0
   onInteractionTrigger:
     m_PersistentCalls:
       m_Calls: []

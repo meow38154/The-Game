@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using GGMLib.ModuleSystem;
+using SaveSystems;
 using TMPro;
 using UI.Interaction.Events;
 using UI.Interaction.Interface;
@@ -13,19 +14,27 @@ namespace UI.Interaction
 {
     public class InteractionTrigger : MonoBehaviour, IInteractionTrigger
     {
+        [Header("Start Setting")] 
+        [SerializeField] private bool dead;
+        [SerializeField] private Transform owner;
+        
         [Header("Text Settings")]
         [SerializeField] private string nameText;        
-        [SerializeField] private string loreText;   
+        [SerializeField] private string loreText;
+
+        [Header("Channel Settings")] 
+        [SerializeField] private bool saveChannelNumber;
+        [SerializeField] private int channelNumber;
         
         [Header("Interaction Settings")]
         [SerializeField] private int remainingIterations = 1;
         [SerializeField] private float interactionDuration = 2f;
 
-        [Header("Start Setting")] 
-        [SerializeField] private bool dead;
         
         [Header("Visual Settings")]
         [SerializeField] private float animationDuration = 0.5f;
+        
+        public Transform Owner => owner;
         
         private Transform _panel;
         private Image _interactionLoad;
@@ -35,7 +44,8 @@ namespace UI.Interaction
         private bool _enable;
         private bool _isInteracting;
 
-        public event Action OnInteractionTrigger; 
+        public event Action<int> OnInteractionTrigger; 
+        
         
         private void Awake()
         {
@@ -47,10 +57,7 @@ namespace UI.Interaction
             _loreText = _panel.Find("Lore").TryGetComponent(out TextMeshProUGUI loreTextMesh) ?  loreTextMesh : null;
             Debug.Assert(loreTextMesh != null,  nameof(loreTextMesh) + " != null");
             
-            if (_nameText == null) return;
-            _nameText.text  = nameText;
-            if (_loreText == null) return;
-            _loreText.text = loreText;
+            ContentChange(nameText + "/" + loreText);
             
             _panel.transform.localScale = Vector3.zero;
 
@@ -61,6 +68,33 @@ namespace UI.Interaction
                     interactionEvent.InteractionTrigger = this;
                 }
             }
+
+        }
+
+        public void ContentChange(string text)
+        {
+            string[] t = text.Split("/");
+            
+            if (_nameText == null) return;
+            _nameText.text  = t[0];
+            if (_loreText == null) return;
+            _loreText.text = t[1];
+        }
+
+        private void Start()
+        {            
+            if (!saveChannelNumber) return;
+            channelNumber = SaveDataManager.Instance.Data.channel;
+        }
+
+        public void ChangeChannelNumber(int number)
+        {
+            if (number <= channelNumber) return;
+            channelNumber = number;
+            
+            if (!saveChannelNumber) return;
+            SaveDataManager.Instance.Data.channel = channelNumber;
+            SaveDataManager.Instance.Save();
         }
 
         public void ChangeDeadField(bool value)
@@ -100,7 +134,7 @@ namespace UI.Interaction
         {
             KeyBoardInteractionTrigger();
         }
-        
+
         private void KeyBoardInteractionTrigger()
         {
             if (_interactionLoad == null || !_enable || dead || Time.timeScale == 0) return;
@@ -121,7 +155,7 @@ namespace UI.Interaction
             _isInteracting = true;
             _interactionLoad.fillAmount = 0f;
 
-            OnInteractionTrigger?.Invoke();
+            OnInteractionTrigger?.Invoke(channelNumber);
             InteractionActive(false);
         }
     }

@@ -19,7 +19,7 @@ namespace FSM.States
         public override void Update()
         {
             base.Update();
-            HandleMovementChange(Player.PlayerInputSo.MoveDir);
+            HandleMovementChange(Player.Movement.CanManualMovement ? Player.PlayerInputSo.MoveDir : Vector2.zero);
         }
         
         private void HandleMovementChange(Vector2 movementKey)

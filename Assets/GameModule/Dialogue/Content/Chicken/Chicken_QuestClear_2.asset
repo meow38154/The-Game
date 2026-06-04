@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Chicken_QuestClear_2
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 0773b74c88dce4544905077738180e1e, type: 2}
+    dialogues:
+    - "\uAF2D\uAF2D!"
+    - "\uB355\uBD84\uC5D0 \uC54C\uC744 \uCC3E\uC558\uC5B4\uC694!"
+    - "\uC815\uB9D0 \uACE0\uB9C8\uC6E0\uC5B4\uC694!"
+    - "\uC774\uC81C \uC548 \uC783\uC5B4\uBC84\uB9B4 \uAC70\uC608\uC694."
+    - ...
+    - "\uC544\uB9C8\uB3C4\uC694."
+    - "\uC5B4\uC81C\uB3C4 \uD55C \uBC88 \uB2E4\uB978 \uACF3\uC5D0 \uB193\uC544\uB46C\uB294\uB370..."
+    - "\uC5B4\uB514\uC5D0 \uB193\uC544\uB46C\uB294\uC9C0 \uAE30\uC5B5\uC774 \uC548
+      \uB098\uC694."
+    - "\uD5E4\uD5E4!"

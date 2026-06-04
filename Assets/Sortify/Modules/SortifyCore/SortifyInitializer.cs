@@ -1,4 +1,5 @@
 #if UNITY_EDITOR && SORTIFY
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Sortify
     {
         private static bool _labelDrawn = false;
 
+        [Obsolete("Obsolete")]
         static SortifyInitializer()
         {
             EditorApplication.hierarchyWindowItemOnGUI -= OnHierarchyGUI;
@@ -20,6 +22,7 @@ namespace Sortify
 
         public static void Refresh() => EditorApplication.RepaintHierarchyWindow();
         private static void ResetLabelDrawn() => _labelDrawn = false;
+        [Obsolete("Obsolete")]
         private static void OnHierarchyGUI(int instanceID, Rect selectionRect)
         {
             if (EditorApplication.isPlaying)

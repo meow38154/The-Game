@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4294402515893197503}
   - component: {fileID: 2631909672399458158}
   m_Layer: 5
-  m_Name: ClearQuest Event
+  m_Name: ClearQuest Event (c = 0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,3 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.Interaction.Events.ClearQuestEvent
   requiredInteractionCount: 1
+  channelNumber: 0
+  quest: 0
+  counting: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pig_Error Profile
   m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueProfileDataSo
   <ProfileIcon>k__BackingField: {fileID: 21300000, guid: 0a5bdc7bfe8796b4eafafddc28e2b4c5, type: 3}
-  <Name>k__BackingField: "\u314F\u314F"
+  <Name>k__BackingField: '##'

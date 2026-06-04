@@ -31,7 +31,7 @@ namespace GGMLib.ObjectPool.Runtime
             if (_pool.Count > 0)
             {
                 item = _pool.Pop();
-                item.GameObject.SetActive(false);
+                item.GameObject.SetActive(true);
             }
             else
             {

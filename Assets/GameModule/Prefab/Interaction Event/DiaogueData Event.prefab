@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6257712254360893571}
   - component: {fileID: 8747227458008133273}
   m_Layer: 0
-  m_Name: DiaogueData Event
+  m_Name: DiaogueData Event (c = 0)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2028cd72e7964773aaeb9234ad45227d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Agents.NPC.NpcDialogueData
+  requiredInteractionCount: 1
+  channelNumber: 0
   dialogues: {fileID: 0}
+  dialogueEndEvent:
+    m_PersistentCalls:
+      m_Calls: []

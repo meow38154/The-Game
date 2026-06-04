@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Bee_QuestClear_2
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: c10888a0652007e4c88e5c5f3f8cd719, type: 2}
+    dialogues:
+    - "안녕하세요!"
+    - "요즘은 벌집 위치를 잘 기억하고 있어요!"
+    - "그래도 가끔 헷갈려서"
+    - "집 주위를 빙글빙글 돌 때가 있어요."
+    - "헤헤..."
+    - "그래도 전보다는 훨씬 낫습니다!"

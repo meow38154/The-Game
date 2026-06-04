@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Cow_QuestClear_2
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 6fe3518e6987a2843a18d55a1f3cd579, type: 2}
+    dialogues:
+    - "\uC74C\uBA38..."
+    - "\uAC00\uB054 \uC0DD\uAC01\uD574."
+    - "\uC65C \uBC30\uB294 \uD56D\uC0C1 \uB2E4\uC2DC \uACE0\uD30C\uC9C0\uB294 \uAC78\uAE4C."
+    - "\uBD84\uBA85 \uC544\uAE4C \uBA39\uC5C8\uB294\uB370..."
+    - "\uC2DC\uAC04\uC774 \uC9C0\uB098\uBA74 \uB610 \uBE44\uC5B4 \uC788\uC5B4."
+    - "..."
+    - "\uCC38 \uC2E0\uAE30\uD55C \uC77C\uC774\uC57C."
+    - "\uC544."
+    - "\uC0DD\uAC01\uD558\uB2E4 \uBCF4\uB2C8 \uB610 \uBC30\uACE0\uD504\uB124."

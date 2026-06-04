@@ -1,15 +1,21 @@
 ﻿using Agents.NPC;
+using GGMLib.ObjectPool.Runtime;
+using Pool;
 using UI.Dialogues;
 using UnityEngine;
+using UnityEngine.Events;
 using Utility;
 
 namespace UI.Interaction.Events
 {
     public class DialogueEvent : AbstractInteractionEvent
     {
+        [Header("Dialogues Settings")]
         [SerializeField] private DialogueGroupDataSo dialogues;
-        private int _indexCount;
 
+        [SerializeField] private UnityEvent dialogueEndEvent;
+        
+        private int _indexCount;
 
         public void PlayDialogue()
         {
@@ -25,7 +31,7 @@ namespace UI.Interaction.Events
             EventBus.Publish(
                 new DialogueStartMessage(
                     dialogues.Dialogues[_indexCount].DialogueBundleData,
-                    InteractionTrigger));
+                    InteractionTrigger, dialogueEndEvent));
 
             if (_indexCount < dialogues.Dialogues.Length - 1)
                 _indexCount++;

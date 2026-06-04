@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab37665b576a4e549eaea7b11c9aa08c, type: 3}
-  m_Name: Pool Item
+  m_Name: Clear_Display
   m_EditorClassIdentifier: ObjectPool_runtime.assembly::GGMLib.ObjectPool.Runtime.PoolItemSO
-  poolName: Sans
-  prefab: {fileID: 8068794731697125749, guid: b0580927e74d30a458d0669e6f69bcf8, type: 3}
-  initCount: 5
+  poolName: Clear_Display
+  prefab: {fileID: 6460386531103294707, guid: 05c9055be20b78c40b1bb0b9e0183df6, type: 3}
+  initCount: 30

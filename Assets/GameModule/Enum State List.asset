@@ -19,3 +19,10 @@ MonoBehaviour:
   - CowQuest
   - BeeQuest
   - HorseQuest
+  - EndQuest
+  - HealthAddChickenQuest
+  - HealthAddSheepQuest
+  - HealthAddCowQuest
+  - HealthAddBeeQuest
+  - HealthAddHorseQuest
+  - FindSword

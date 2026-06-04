@@ -11,7 +11,7 @@ namespace Structure
 
             foreach (Transform child in transform)
             {
-                if (child.gameObject.activeSelf)
+                if (child.gameObject.activeSelf && child.gameObject.name == "Carrot")
                     activeChildren.Add(child.gameObject);
             }
 

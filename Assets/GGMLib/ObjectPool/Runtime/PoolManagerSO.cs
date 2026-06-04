@@ -35,10 +35,14 @@ namespace GGMLib.ObjectPool.Runtime
             return default;
         }
 
-        public void Push(IPoolable poolable)
+        public void Push(IPoolable poolable, bool rootBack = false)
         {
             Debug.Assert(_rootTrm != null, "PoolSO는 사용하기 전 반드시 초기화가 되어 있어야 합니다.");
-            if (_pools.TryGetValue(poolable.PoolItem, out Pool pool)) pool.Push(poolable);
+            if (_pools.TryGetValue(poolable.PoolItem, out Pool pool))
+            {
+                pool.Push(poolable);
+                if (rootBack) poolable.GameObject.transform.SetParent(_rootTrm);
+            }
         }
     }
 }

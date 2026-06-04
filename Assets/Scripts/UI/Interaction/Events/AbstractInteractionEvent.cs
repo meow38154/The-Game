@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using UI.Interaction.Interface;
 using UnityEngine;
 
@@ -8,19 +9,21 @@ namespace UI.Interaction.Events
     { 
         [Header("Start Setting")]
         [SerializeField] private int requiredInteractionCount;
-        [Header("Quest Setting")]
-        [SerializeField] private QuestListEnum questListEnum;
-        [SerializeField] private bool completion;
+
+        [Header("Channel Setting")] 
+        [SerializeField] private int channelNumber;
 
         public IInteractionTrigger InteractionTrigger { get; set; }
         
-        public void Start()
+        protected virtual void Start()
         {
             InteractionTrigger.OnInteractionTrigger += HandleInteraction;
         }
 
-        private void HandleInteraction()
+        private void HandleInteraction(int num)
         {
+            if (num != channelNumber) return;
+            
             if (requiredInteractionCount <= 1)
             {
                 InvokeEvent();
@@ -33,6 +36,14 @@ namespace UI.Interaction.Events
 
         private void OnValidate()
         {
+            string baseName = gameObject.name;
+            for (int i = 0; i < 10; i++)
+                baseName = Regex.Replace(baseName, @"\s*\(\d+\)$", "");
+            
+            baseName = Regex.Replace(baseName, @"\s*\(c\s*=\s*-?\d+\)$", "");
+
+            gameObject.name = $"{baseName} (c = {channelNumber})";
+            
             if (requiredInteractionCount > 0) return;
             requiredInteractionCount = 1;
         }

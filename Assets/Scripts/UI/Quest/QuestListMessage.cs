@@ -1,6 +1,6 @@
 ﻿namespace UI.Quest
 {
-    public readonly struct QuestAddMessage
+    public readonly struct  QuestAddMessage
     {
         public readonly QuestListEnum title;
         public readonly string questTitle;
@@ -27,6 +27,16 @@
         public readonly QuestListEnum title;
 
         public QuestClearMessage(QuestListEnum title)
+        {
+            this.title = title;
+        }
+    }    
+    
+    public readonly struct QuestAllRemoveMessage
+    {
+        public readonly QuestListEnum title;
+
+        public QuestAllRemoveMessage(QuestListEnum title)
         {
             this.title = title;
         }

@@ -1,6 +1,7 @@
 ﻿using UI.Interaction;
 using UI.Interaction.Interface;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace UI.Dialogues
 {
@@ -8,11 +9,13 @@ namespace UI.Dialogues
     {
         public readonly DialogueBundleData[] dialogues;
         public readonly IInteractionTrigger interactionObject;
+        public readonly UnityEvent unityEvent;
 
-        public DialogueStartMessage(DialogueBundleData[] dialogues, IInteractionTrigger interactionObject)
+        public DialogueStartMessage(DialogueBundleData[] dialogues, IInteractionTrigger interactionObject, UnityEvent unityEvent)
         {
             this.interactionObject = interactionObject;
             this.dialogues = dialogues;
+            this.unityEvent = unityEvent;
         }
     }
 }
