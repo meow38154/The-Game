@@ -8,7 +8,6 @@ namespace UI.Interaction.Events
     {
         [Header("Quest Settings")]
         [SerializeField] private QuestListEnum quest;
-        [SerializeField] private bool counting;
 
         private bool _end;
 
@@ -19,8 +18,7 @@ namespace UI.Interaction.Events
             
             EventBus.Publish(new QuestClearMessage(quest));
             
-            if (!counting) return;
-            EventBus.Publish(new QuestCountClearMessage());
+            EventBus.Publish(new QuestCountClearMessage(1, quest));
         }
     }
 }

@@ -10,8 +10,10 @@ namespace SaveSystems
     public class SaveData
     {
         public bool pigDialogue;
-        public bool pigEnd;
         public int channel;
+        public bool pigEnd;
+
+        public bool ending1;
     }
 
     public class SaveDataManager : MonoBehaviour
@@ -21,7 +23,7 @@ namespace SaveSystems
         public SaveData Data { get; private set; }
 
         private string SavePath =>
-            Path.Combine(Application.persistentDataPath, "##NPCDatas.json");
+            Path.Combine(Application.dataPath, "NPCDatas.json");
 
         public event Action OnSave;
         public event Action OnLoad;

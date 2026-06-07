@@ -43,7 +43,7 @@ namespace UI.Quest
 
         private void QuestRemove(QuestRemoveMessage message)
         {
-            EventBus.Publish(new QuestCountRemoveMessage(1));
+            EventBus.Publish(new QuestCountRemoveMessage(1, message.title));
             _questDic.Remove(message.title);
             QuestViewUpdate();
         }

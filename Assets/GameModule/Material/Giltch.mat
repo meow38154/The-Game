@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: Giltch
   m_Shader: {fileID: 4800000, guid: cec94903314a66740b42a4f0626fe58c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

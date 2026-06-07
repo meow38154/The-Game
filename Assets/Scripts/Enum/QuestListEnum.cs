@@ -13,4 +13,9 @@ public enum QuestListEnum
     HealthAddBeeQuest = 9,
     HealthAddHorseQuest = 10,
     FindSword = 11,
+    KillChicken = 12,
+    KillSheep = 13,
+    KillCow = 14,
+    KillBee = 15,
+    KillHorse = 16,
 }
