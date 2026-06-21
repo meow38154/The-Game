@@ -1,6 +1,8 @@
 {
-    "pigDialogue": true,
-    "channel": 1,
-    "pigEnd": true,
-    "ending1": false
+    "pigDialogue": false,
+    "channel": 0,
+    "pigEnd": false,
+    "ending1": false,
+    "root2": true,
+    "boss": true
 }

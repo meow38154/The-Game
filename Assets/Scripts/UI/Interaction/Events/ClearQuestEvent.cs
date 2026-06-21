@@ -1,4 +1,5 @@
-﻿using UI.Quest;
+﻿using Sound;
+using UI.Quest;
 using UnityEngine;
 using Utility;
 
@@ -8,6 +9,7 @@ namespace UI.Interaction.Events
     {
         [Header("Quest Settings")]
         [SerializeField] private QuestListEnum quest;
+        [SerializeField] private SoundClipSO sound;
 
         private bool _end;
 
@@ -17,7 +19,7 @@ namespace UI.Interaction.Events
             _end = true;
             
             EventBus.Publish(new QuestClearMessage(quest));
-            
+            EventBus.Publish(SoundEvents.PlaySoundEvent.Init(transform.position, sound));
             EventBus.Publish(new QuestCountClearMessage(1, quest));
         }
     }

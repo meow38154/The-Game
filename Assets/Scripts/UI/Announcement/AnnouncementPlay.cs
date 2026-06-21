@@ -21,22 +21,27 @@ namespace UI.Announcement
             EventBus.Subscribe<AnnouncementMessage>(PlayDialogue);
         }
 
+        private Sequence _sequence;
+
         public void PlayDialogue(AnnouncementMessage message)
         {
             _content.text = message.content;
+
+            _sequence?.Kill();
             _rectTransform.DOKill();
-            
-            Sequence seq = DOTween.Sequence();
-            
-            seq.Append(_rectTransform.DOAnchorPosX(-750f, animDuration).SetEase(Ease.OutCubic));
-            
-            seq.AppendInterval(waitDuration);
-            
-            seq.Append(_rectTransform.DOAnchorPosX(-1500f, animDuration).SetEase(Ease.InCubic));
+
+            _rectTransform.anchoredPosition = new Vector2(-1500f, _rectTransform.anchoredPosition.y);
+
+            _sequence = DOTween.Sequence();
+
+            _sequence.Append(_rectTransform.DOAnchorPosX(-750f, animDuration).SetEase(Ease.OutCubic));
+            _sequence.AppendInterval(waitDuration);
+            _sequence.Append(_rectTransform.DOAnchorPosX(-1500f, animDuration).SetEase(Ease.InCubic));
         }
 
         private void OnDestroy()
         {
+            _sequence?.Kill();
             EventBus.Unsubscribe<AnnouncementMessage>(PlayDialogue);
         }
     }

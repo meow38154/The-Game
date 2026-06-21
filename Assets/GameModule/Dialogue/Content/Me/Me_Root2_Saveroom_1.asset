@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Me_Root2_Saveroom_1
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 3b4bc510605fa7f48815227a7558aa0b, type: 2}
+    dialogues:
+    - "\uC74C..."
+    - "\uB370\uC774\uD130\uAC00 \uAE68\uC9C0\uBA74\uC11C \uC138\uC774\uBE0C \uB808\uBC84\uAC00
+      \uB0A0\uC544\uAC04 \uAC83 \uAC19\uC740\uB370\uC694..?"
+    - "\uC624 \uC138\uC0C1\uC5D0 \uC5B4\uB5A1\uD558\uC9C0"
+    - ...
+    - "\uC5B4\uB514\uC5D0 \uAC1C\uBC1C\uC790 \uBC29 \uD558\uB098\uB97C \uB354 \uB480\uB358
+      \uAC83 \uAC19\uC740\uB370 \uAC70\uAE30\uC11C \uAC00\uC838\uC624\uBA74 \uB418\uB824\uB098"
+    - "\uD55C \uBC88 \uB2E4\uC2DC \uC640\uBCF4\uC2E4\uB798\uC694?"

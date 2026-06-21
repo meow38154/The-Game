@@ -3,7 +3,9 @@ using System.Collections;
 using Agents.Players;
 using DG.Tweening;
 using GGMLib.ModuleSystem;
+using Sound;
 using TMPro;
+using UI.Interaction.Events;
 using UI.Interaction.Interface;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,7 +15,7 @@ using Utility;
 
 namespace UI.Dialogues
 {
-    public class DialogueController : MonoBehaviour
+    public class DialogueController : MonoBehaviour, IGetPlayer
     {
         [Header("Dialogue Settings")]
         [SerializeField] private float textPrintSpeed = 0.05f;
@@ -24,11 +26,16 @@ namespace UI.Dialogues
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI contentText;
 
+        [Header("Sound")]
+        [SerializeField] private SoundClipSO diaRenderSound;
+        [SerializeField] private SoundClipSO nextDiaSound;
+
         private Coroutine _dialogueRoutine;
         private Tween _textTween;
         private IControlMovement _controlMovement;
 
-        private GameObject _player;
+        public GameObject Player { get; set; }
+
         private IInteractionTrigger _actionInteractionObject;
 
         private void Awake()
@@ -38,16 +45,7 @@ namespace UI.Dialogues
 
         private void Start()
         {
-            if (_player == null) return;
-
-            _controlMovement = _player
-                .GetComponent<ModuleOwner>()
-                .GetModule<IControlMovement>();
-        }
-
-        private void HandleGetPlayer(PlayerGameObjectMessage message)
-        {
-            _player = message.gameObject;
+            TryCacheControlMovement();
         }
 
         private void OnEnable()
@@ -61,12 +59,40 @@ namespace UI.Dialogues
         private void OnDisable()
         {
             EventBus.Unsubscribe<DialogueStartMessage>(DialogueRenderPlay);
-            EventBus.Unsubscribe<PlayerGameObjectMessage>(HandleGetPlayer);
 
             if (_dialogueRoutine != null)
+            {
                 StopCoroutine(_dialogueRoutine);
+                _dialogueRoutine = null;
+            }
 
             _textTween?.Kill();
+
+            if (_controlMovement != null)
+                _controlMovement.CanManualMovement = true;
+        }
+
+        private void OnDestroy()
+        {
+            EventBus.Unsubscribe<PlayerGameObjectMessage>(HandleGetPlayer);
+        }
+
+        public void HandleGetPlayer(PlayerGameObjectMessage message)
+        {
+            Player = message.player;
+            TryCacheControlMovement();
+        }
+
+        private void TryCacheControlMovement()
+        {
+            if (Player == null)
+                return;
+
+            ModuleOwner moduleOwner = Player.GetComponent<ModuleOwner>();
+            if (moduleOwner == null)
+                return;
+
+            _controlMovement = moduleOwner.GetModule<IControlMovement>();
         }
 
         private void DialogueRenderPlay(DialogueStartMessage message)
@@ -75,10 +101,19 @@ namespace UI.Dialogues
                 StopCoroutine(_dialogueRoutine);
 
             _actionInteractionObject = message.interactionObject;
-            _dialogueRoutine = StartCoroutine(DialogueRender(message.dialogues, message.unityEvent));
+            _dialogueRoutine = StartCoroutine(DialogueRender(
+                message.dialogues,
+                message.unityEvent,
+                message.addQuestEvent,
+                message.channelNum
+            ));
         }
 
-        private IEnumerator DialogueRender(DialogueBundleData[] dialogues, UnityEvent unityEvent)
+        private IEnumerator DialogueRender(
+            DialogueBundleData[] dialogues,
+            UnityEvent unityEvent,
+            AddQuestEvent[] addQuestEvent,
+            int channelNum)
         {
             if (_controlMovement != null)
                 _controlMovement.CanManualMovement = false;
@@ -109,6 +144,13 @@ namespace UI.Dialogues
                         yield return WaitEnterUp();
 
                     yield return WaitEnterDown();
+                    PlaySound(nextDiaSound);
+
+                    _textTween?.Kill(false);
+                    contentText.text = "";
+                    contentText.ForceMeshUpdate();
+
+                    yield return null;
                 }
             }
 
@@ -120,8 +162,20 @@ namespace UI.Dialogues
             if (_actionInteractionObject != null)
                 _actionInteractionObject.InteractionActive(true);
 
+            if (addQuestEvent != null)
+            {
+                foreach (AddQuestEvent questEvent in addQuestEvent)
+                {
+                    if (questEvent.InteractionTrigger.ChannelNumber == questEvent.ChannelNumber)
+                    {
+                        questEvent.AddQuest();
+                        questEvent.End = true;
+                    }
+                }
+            }
+
             unityEvent?.Invoke();
-            
+
             _dialogueRoutine = null;
         }
 
@@ -132,11 +186,15 @@ namespace UI.Dialogues
             content = content.Replace("{C}", Environment.UserName);
             content = content.Replace("{D}", Environment.UserDomainName);
 
-            contentText.text = "";
+            _textTween?.Kill(true);
 
-            _textTween?.Kill();
+            contentText.text = "";
+            contentText.ForceMeshUpdate();
+
+            yield return null;
 
             float duration = content.Length * textPrintSpeed;
+            int lastTextLength = 0;
 
             _textTween = contentText
                 .DOText(content, duration)
@@ -144,9 +202,18 @@ namespace UI.Dialogues
 
             while (_textTween != null && _textTween.IsActive() && _textTween.IsPlaying())
             {
+                int currentTextLength = contentText.text.Length;
+
+                if (currentTextLength > lastTextLength)
+                {
+                    PlaySound(diaRenderSound);
+                    lastTextLength = currentTextLength;
+                }
+
                 if (IsEnterPressed())
                 {
                     skipped = true;
+                    PlaySound(nextDiaSound);
                     _textTween.Complete();
                     break;
                 }
@@ -154,7 +221,18 @@ namespace UI.Dialogues
                 yield return null;
             }
 
+            contentText.text = content;
+            contentText.ForceMeshUpdate();
+
             onComplete?.Invoke(skipped);
+        }
+
+        private void PlaySound(SoundClipSO sound)
+        {
+            if (sound == null)
+                return;
+
+            EventBus.Publish(SoundEvents.PlaySoundEvent.Init(transform.position, sound));
         }
 
         private static bool IsEnterPressed()

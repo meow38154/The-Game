@@ -33,8 +33,9 @@ namespace UI.FakeEnding
         private void DialoguePlay()
         {
             if (!SaveDataManager.Instance.Data.pigDialogue) return;
+            if (groupData == null) return;
             
-            EventBus.Publish(new DialogueStartMessage(groupData.Dialogues[0].DialogueBundleData, null, new UnityEvent()));
+            EventBus.Publish(new DialogueStartMessage(groupData.Dialogues[0].DialogueBundleData, null, new UnityEvent(), null, 1));
             SaveDataManager.Instance.Data.pigEnd = true;
             SaveDataManager.Instance.Save();
             OnDialogueEnd?.Invoke();

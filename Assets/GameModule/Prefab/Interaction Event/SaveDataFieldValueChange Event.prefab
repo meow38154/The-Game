@@ -50,5 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.Interaction.Events.SaveDataValueChangeEvent
   requiredInteractionCount: 1
   channelNumber: 0
+  fileType: 0
   fieldName: pigDialogue
   fieldValue: 1

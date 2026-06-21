@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f3d791d4c2940bf064217e1a7adf, type: 3}
+  m_Name: Me_Root2_1
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueDataSo
+  <DialogueBundleData>k__BackingField:
+  - profile: {fileID: 11400000, guid: 3b4bc510605fa7f48815227a7558aa0b, type: 2}
+    dialogues:
+    - "\uBB50\uC5EC \uC820\uC7A5"
+    - "\uBB54 \uC77C\uC774\uC608\uC694?"
+    - "\uC544\uB2C8 \uBB50 \uB54C\uBB38\uC5D0 \uAC8C\uC784\uC774 \uC774\uB807\uAC8C
+      \uD130\uC9C4\uAC70\uC9C0? \uBBF8\uCE5C\uAC74\uAC00?"
+    - ...
+    - "\uC544"
+    - "\uD639\uC2DC \uC9C4\uC9DC \uD504\uB85C\uD1A0\uD0C0\uC785 \uB9F5\uC5D0 \uC5D4\uB529\uC774
+      \uC5C6\uC5B4\uC84C\uB124\uC694?"
+    - "\uBD84\uBA85 \uC5D4\uB529\uAE4C\uC9C0\uB294 \uC81C\uC791 \uD588\uC744\uD150\uB370..
+      \uB204\uAC00 \uC0AD\uC81C\uD55C\uAC74\uAC00?"
+    - "\uC5D4\uB529\uC774 \uC5C6\uB294\uB370 \uBD88\uB7EC\uC624\uBA74 \uD130\uC9C0\uB294\uB370"
+    - "\uC870\uC84C\uB124\uC694"
+    - "\uC73C\uC73C\uC73C\uC74C..."
+    - "\uD750\uC73C\uC73C\uC73C\uC73C\uC73C\uC73C\uC73C\uC73C\uC73C\uC73C\uC74C..."
+    - "\uC88B\uC544\uC694"
+    - "\uC81C\uAC00 \uBCF4\uAE30\uC5D4 \uC624\uBE0C\uC81D\uD2B8 \uD558\uB098\uD558\uB098
+      \uCF54\uB4DC \uB2E4\uC2DC \uC9DC\uB294 \uAC74 \uBB34\uB9AC\uAC00 \uC788\uC5B4\uBCF4\uC774\uB2C8\uAE4C"
+    - "\uC138\uC774\uBE0C \uD30C\uC77C\uC744 \uBD88\uB7EC\uC640\uC11C \uBCF5\uAD6C
+      \uC2DC\uB3C4\uB97C \uD574\uBD10\uC57C\uACA0\uB124\uC694"
+    - "\uC6B0\uC120 \uC800\uB97C \uB530\uB77C\uC640\uC8FC\uC138\uC694"

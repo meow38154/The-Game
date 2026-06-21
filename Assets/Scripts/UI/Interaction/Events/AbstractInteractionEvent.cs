@@ -12,6 +12,7 @@ namespace UI.Interaction.Events
 
         [Header("Channel Setting")] 
         [SerializeField] private int channelNumber;
+        public  int ChannelNumber => channelNumber;
 
         public IInteractionTrigger InteractionTrigger { get; set; }
         

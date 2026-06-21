@@ -51,4 +51,7 @@ MonoBehaviour:
   requiredInteractionCount: 1
   channelNumber: 0
   title: 
+  notificationTitle: 
   questTitle: 0
+  noTitle: 0
+  sound: {fileID: 11400000, guid: 7481e1e9355936c479efb41779401be6, type: 2}

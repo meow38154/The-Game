@@ -31,3 +31,12 @@ MonoBehaviour:
   - KillCow
   - KillBee
   - KillHorse
+  - PPigQuest
+  - PCowQuest
+  - PChickenQuest
+  - PBeeQuest
+  - GiveLever
+  - StickyLever
+  - Console1
+  - Console2
+  - Console3

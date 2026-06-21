@@ -51,6 +51,7 @@ namespace UI
             }
             else
             {
+                transform.SetAsLastSibling();
                 targetGo.SetActive(true);
                 target.localScale = Vector3.zero;
 

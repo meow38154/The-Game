@@ -33,7 +33,8 @@ namespace UI.Interaction
         
         [Header("Visual Settings")]
         [SerializeField] private float animationDuration = 0.5f;
-        
+
+        public int ChannelNumber => channelNumber;
         public Transform Owner => owner;
         
         private Transform _panel;
@@ -100,6 +101,15 @@ namespace UI.Interaction
         public void ChangeDeadField(bool value)
         {
             dead = value;
+            if (value == true)
+            {
+                _panel.DOScale(Vector3.zero, animationDuration).SetEase(Ease.OutCubic);
+            }            
+            
+            else if (_enable)
+            {
+                _panel.DOScale(Vector3.one, animationDuration).SetEase(Ease.OutCubic);
+            }
         }
 
         public void SetDialogueVisible(bool value)
@@ -133,6 +143,12 @@ namespace UI.Interaction
         private void Update()
         {
             KeyBoardInteractionTrigger();
+        }
+
+        public void ArtificialTriggerInvoke(int channelNum)
+        {
+            OnInteractionTrigger?.Invoke(channelNum);
+            InteractionActive(false);
         }
 
         private void KeyBoardInteractionTrigger()

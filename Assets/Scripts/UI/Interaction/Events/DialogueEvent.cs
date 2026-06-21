@@ -12,7 +12,6 @@ namespace UI.Interaction.Events
     {
         [Header("Dialogues Settings")]
         [SerializeField] private DialogueGroupDataSo dialogues;
-
         [SerializeField] private UnityEvent dialogueEndEvent;
         
         private int _indexCount;
@@ -31,7 +30,7 @@ namespace UI.Interaction.Events
             EventBus.Publish(
                 new DialogueStartMessage(
                     dialogues.Dialogues[_indexCount].DialogueBundleData,
-                    InteractionTrigger, dialogueEndEvent));
+                    InteractionTrigger, dialogueEndEvent, transform.parent.GetComponentsInChildren<AddQuestEvent>(), InteractionTrigger.ChannelNumber));
 
             if (_indexCount < dialogues.Dialogues.Length - 1)
                 _indexCount++;

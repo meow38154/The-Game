@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fdb03a26bf4a4fb6c5354fac72356b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.Agent.Player.PlayerMovement
+  rotationMultiplier: -1
   moveSpeed: 8
   rigid: {fileID: 453697169949219051}
   rotateDuration: 0.15
@@ -302,7 +303,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2923935897186985166}

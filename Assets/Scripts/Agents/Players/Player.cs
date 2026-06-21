@@ -22,7 +22,7 @@ namespace Agents.Players
             _stateMachine = new StateMachine(this, playerStates.States);
             _movement = GetModule<IControlMovement>(); 
         }
-        
+
         private void Start()
         {
             ChangeState(PlayerState.PlayerIdle, transitionDuration: 0);

@@ -1,6 +1,8 @@
-﻿namespace UI.Quest
+﻿using UI.Interaction.Events;
+
+namespace UI.Quest
 {
-    public readonly struct  QuestAddMessage
+    public readonly struct QuestAddMessage
     {
         public readonly QuestListEnum title;
         public readonly string questTitle;

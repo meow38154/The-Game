@@ -4,11 +4,11 @@ namespace Agents.Players
 {
     public struct PlayerGameObjectMessage
     {
-        public GameObject gameObject;
+        public GameObject player;
         
-        public PlayerGameObjectMessage(GameObject playerGameObject)
+        public PlayerGameObjectMessage(GameObject playerPlayer)
         {
-            gameObject = playerGameObject;
+            player = playerPlayer;
         }
     }
 }

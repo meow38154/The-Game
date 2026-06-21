@@ -18,4 +18,13 @@ public enum QuestListEnum
     KillCow = 14,
     KillBee = 15,
     KillHorse = 16,
+    PPigQuest = 17,
+    PCowQuest = 18,
+    PChickenQuest = 19,
+    PBeeQuest = 20,
+    GiveLever = 21,
+    StickyLever = 22,
+    Console1 = 23,
+    Console2 = 24,
+    Console3 = 25,
 }

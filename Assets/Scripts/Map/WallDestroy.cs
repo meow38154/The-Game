@@ -57,6 +57,7 @@ namespace Map
             seq.AppendCallback(()
                 =>
             {
+                trm.position = new Vector3(trm.position.x, 0, trm.position.z);
                 GetComponent<Collider>().enabled = false;
                 _a = false;
             });

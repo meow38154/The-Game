@@ -52,3 +52,4 @@ MonoBehaviour:
   channelNumber: 3
   poolManager: {fileID: 11400000, guid: 19c6e0901699c3a4697f7ed01a721719, type: 2}
   poolItem: {fileID: 11400000, guid: 73e6917ff8b365b46844075fe657c504, type: 2}
+  sound: {fileID: 11400000, guid: 30a41a7c1b344a3498eae01b61750f4c, type: 2}

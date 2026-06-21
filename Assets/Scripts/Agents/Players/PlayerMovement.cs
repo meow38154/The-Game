@@ -21,7 +21,7 @@ namespace Agents.Players
 
         public Vector3 Velocity => _velocity;
 
-        public bool CanManualMovement { get; set; } = true;
+        public bool CanManualMovement { get; set; } = false;
 
 
         public void Initialize(ModuleOwner owner)

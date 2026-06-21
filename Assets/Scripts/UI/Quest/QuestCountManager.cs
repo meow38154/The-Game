@@ -64,8 +64,6 @@ namespace UI.Quest
 
         private void OnQuestCleared(QuestCountClearMessage message)
         {
-            Debug.Log($"실제로 카운트 매니저에 들어온 Clear: {message.quest}");
-
             AddUnique(QuestClearEnumLs, message.quest);
             CheckEvents();
         }

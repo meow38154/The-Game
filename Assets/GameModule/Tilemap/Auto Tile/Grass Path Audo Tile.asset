@@ -19,22 +19,18 @@ MonoBehaviour:
   m_Random: 0
   m_PhysicsShapeCheck: 0
   m_AutoTileDictionary:
-    keyData: 08000000040000000c000000010000000500000002000000030000000a0000000b0000000f000000070000000d0000000e000000
+    keyData: 08000000010000000c0000000500000002000000030000000a0000000b0000000f000000070000000d0000000e0000000400000000000000
     valueData:
     - spriteList:
       - {fileID: 1449742545, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
       textureList:
       - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
     - spriteList:
-      - {fileID: 2091256127, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+      - {fileID: 1857236675, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
       textureList:
       - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
     - spriteList:
       - {fileID: -2070748676, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
-      textureList:
-      - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
-    - spriteList:
-      - {fileID: 1857236675, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
       textureList:
       - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
     - spriteList:
@@ -72,6 +68,18 @@ MonoBehaviour:
     - spriteList:
       - {fileID: -646215383, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
       textureList:
+      - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+    - spriteList:
+      - {fileID: 2091256127, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+    - spriteList:
+      - {fileID: 1985375640, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+      - {fileID: -1311855566, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+      - {fileID: -424240305, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
+      - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
       - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}
   m_TextureList:
   - {fileID: 2800000, guid: 88dd58a79949d904dac89ebbf4cfe951, type: 3}

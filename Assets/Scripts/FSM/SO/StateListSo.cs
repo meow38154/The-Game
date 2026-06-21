@@ -21,7 +21,7 @@ namespace FSM.SO
                 sv[i] = States[i].StateName;
             }
             
-            Utility.EnumSpawner.EnumSpawn(stateListEnumName, sv);
+            //Utility.EnumSpawner.EnumSpawn(stateListEnumName, sv);
         }
     }
 }

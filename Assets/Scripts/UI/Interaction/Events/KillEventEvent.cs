@@ -1,6 +1,8 @@
 ﻿using GGMLib.ObjectPool.Runtime;
 using Pool;
+using Sound;
 using UnityEngine;
+using Utility;
 
 namespace UI.Interaction.Events
 {
@@ -8,6 +10,8 @@ namespace UI.Interaction.Events
     {
         [SerializeField] private PoolManagerSO poolManager;
         [SerializeField] private PoolItemSO poolItem;
+
+        [SerializeField] private SoundClipSO sound;
         
         protected override void InvokeEvent()
         {
@@ -19,6 +23,7 @@ namespace UI.Interaction.Events
             
             item.transform.position = ownerTrm.position;
             ownerTrm.gameObject.SetActive(false);
+            EventBus.Publish(SoundEvents.PlaySoundEvent.Init(transform.position, sound));
         }
     }
 }

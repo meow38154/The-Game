@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56eecc93757444fa3a75ffa257e86e9, type: 3}
+  m_Name: Me_Main_Group
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Dialogues.DialogueGroupDataSo
+  <Dialogues>k__BackingField:
+  - {fileID: 11400000, guid: 36044f2b3886cb94bb5eed5518f71e54, type: 2}
+  - {fileID: 11400000, guid: 8d7c5d14b5484ae4a9bf02f43afbd0e5, type: 2}
+  - {fileID: 11400000, guid: 8d7c5d14b5484ae4a9bf02f43afbd0e5, type: 2}
+  - {fileID: 11400000, guid: 8d7c5d14b5484ae4a9bf02f43afbd0e5, type: 2}
+  - {fileID: 11400000, guid: 8d7c5d14b5484ae4a9bf02f43afbd0e5, type: 2}
+  - {fileID: 11400000, guid: 0e0eef6d488d8b14a904210a8f30e6e0, type: 2}

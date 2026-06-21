@@ -51,11 +51,12 @@ MonoBehaviour:
   requiredInteractionCount: 1
   channelNumber: 0
   poolManager: {fileID: 11400000, guid: 19c6e0901699c3a4697f7ed01a721719, type: 2}
-  clearDisplayPool: {fileID: 11400000, guid: 9a94e445db57b974bbcfacadbb988eec, type: 2}
-  qaDisplayPool: {fileID: 0}
   startDisplay: 0
+  displayPool: {fileID: 0}
   targets:
   - target: {fileID: 0}
     active: 1
+    displayPool: {fileID: 0}
   - target: {fileID: 0}
     active: 0
+    displayPool: {fileID: 0}

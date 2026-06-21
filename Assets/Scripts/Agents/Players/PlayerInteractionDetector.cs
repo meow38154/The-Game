@@ -26,6 +26,7 @@ namespace Agents.Players
             
             _currentEnableInteractionTrigger = trigger;
             _currentEnableInteractionTrigger.SetDialogueVisible(true);
+            
             _visible = true;
         }
 

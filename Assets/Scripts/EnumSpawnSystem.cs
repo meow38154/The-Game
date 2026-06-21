@@ -7,9 +7,9 @@ public class EnumSpawnSystem : ScriptableObject
         [SerializeField] private string fileName;
         [SerializeField] private string[] stateListEnumName;
 
-        [ContextMenu("Load")]
+        /*[ContextMenu("Load")]
         public void Load()
         {
                 EnumSpawner.EnumSpawn(fileName, stateListEnumName);
-        }
+        }*/
 }
